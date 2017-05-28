@@ -1,0 +1,65 @@
+@model HotelProject.Models.Category
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Category</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="CategoryId" />
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SeatsNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SeatsNumber" class="form-control" />
+                <span asp-validation-for="SeatsNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="RoomsNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="RoomsNumber" class="form-control" />
+                <span asp-validation-for="RoomsNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="DelyPrice" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DelyPrice" class="form-control" />
+                <span asp-validation-for="DelyPrice" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Inf" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Inf" class="form-control" />
+                <span asp-validation-for="Inf" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

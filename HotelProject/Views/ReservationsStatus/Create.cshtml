@@ -1,0 +1,103 @@
+@model HotelProject.ViewModels.ReservationsStatusModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Reservation</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ClientName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ClientName" class="form-control" />
+                <span asp-validation-for="ClientName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Phone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PersonNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PersonNumber" class="form-control" />
+                <span asp-validation-for="PersonNumber" class="text-danger"></span>
+            </div>
+        </div>
+        
+
+
+
+
+
+        <div class="form-group">
+            <label asp-for="RoomId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="RoomId" class="form-control">
+                    @foreach (var item in ViewBag.Room)
+                    {
+                        <option value="@item.RoomId">@item.RoomId - @item.Category.Name - @item.Category.Inf</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmployeeId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="EmployeeId" class="form-control">
+                    @foreach (var item in ViewBag.Employee)
+                    {
+                        <option value="@item.EmployeeId">@item.FirstName @item.LastName - @item.Position.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Arrival" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="date" asp-for="Arrival" class="form-control" />
+                <span asp-validation-for="Arrival" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Departure" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="date" asp-for="Departure" class="form-control" />
+                <span asp-validation-for="Departure" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+
+
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

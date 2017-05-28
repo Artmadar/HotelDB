@@ -1,0 +1,91 @@
+@model IEnumerable<HotelProject.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClientName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonNumber)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusRef)
+            </th>
+
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.StatusRef.Room)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusRef.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusRef.Arrival)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusRef.Departure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusRef.Price)
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusRef.StatusId)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusRef.RoomId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusRef.Employee.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusRef.Arrival)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusRef.Departure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusRef.Price)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReservationId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReservationId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReservationId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

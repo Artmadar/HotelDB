@@ -1,0 +1,121 @@
+﻿@model IEnumerable<HotelProject.Models.Client>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentForm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentsSeries)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentsNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.Status.Room)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status.Arrival)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status.Departure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status.Price)
+            </th>
+
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birthday)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DocumentForm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DocumentsSeries)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DocumentsNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+               
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.RoomId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.Employee.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.Arrival)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.Departure)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.Price)
+                </td>
+
+
+
+
+                <td>
+                    <a asp-action="EditClient" asp-route-id="@item.ClientId">Edit Client</a> |
+                    <a asp-action="EditStatus" asp-route-id="@item.Status.StatusId">Edit Status</a> |
+                    <a asp-action="Details" asp-route-id="@item.ClientId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ClientId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,9 @@
+C:\Projects1\HotelProject\HotelProject\bin\Debug\netcoreapp1.1\HotelProject.deps.json
+C:\Projects1\HotelProject\HotelProject\bin\Debug\netcoreapp1.1\HotelProject.runtimeconfig.json
+C:\Projects1\HotelProject\HotelProject\bin\Debug\netcoreapp1.1\HotelProject.runtimeconfig.dev.json
+C:\Projects1\HotelProject\HotelProject\bin\Debug\netcoreapp1.1\HotelProject.dll
+C:\Projects1\HotelProject\HotelProject\obj\Debug\netcoreapp1.1\HotelProject.csprojResolveAssemblyReference.cache
+C:\Projects1\HotelProject\HotelProject\obj\Debug\netcoreapp1.1\HotelProject.AssemblyInfo.cs
+C:\Projects1\HotelProject\HotelProject\bin\Debug\netcoreapp1.1\HotelProject.pdb
+C:\Projects1\HotelProject\HotelProject\obj\Debug\netcoreapp1.1\HotelProject.dll
+C:\Projects1\HotelProject\HotelProject\obj\Debug\netcoreapp1.1\HotelProject.pdb

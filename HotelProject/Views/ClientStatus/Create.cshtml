@@ -1,0 +1,141 @@
+﻿@model HotelProject.ViewModels.ClientStatusModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Client</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+       
+        <div class="form-group">
+            <label asp-for="FirstName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Birthday" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="date" asp-for="Birthday" class="form-control" />
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Sex" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                
+                <select asp-for="Sex" class="form-control">
+                    <option value="м">Муж.</option>
+                    <option value="ж">Жен.</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="DocumentForm" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DocumentForm" class="form-control" />
+                <span asp-validation-for="DocumentForm" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="DocumentsSeries" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DocumentsSeries" class="form-control" />
+                <span asp-validation-for="DocumentsSeries" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="DocumentsNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DocumentsNumber" class="form-control" />
+                <span asp-validation-for="DocumentsNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Phone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+        
+
+
+        <div class="form-group">
+            <label asp-for="RoomId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="RoomId" class="form-control">
+                    @foreach (var item in ViewBag.Room)
+                    {
+                        <option value="@item.RoomId">@item.RoomId - @item.Category.Name - @item.Category.Inf</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmployeeId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="EmployeeId" class="form-control" >
+                    @foreach (var item in ViewBag.Employee)
+                    {
+                        <option value="@item.EmployeeId">@item.FirstName @item.LastName - @item.Position.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="Arrival" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="date" asp-for="Arrival" class="form-control" />
+                <span asp-validation-for="Arrival" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Departure" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="date" asp-for="Departure" class="form-control" />
+                <span asp-validation-for="Departure" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+        
+
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

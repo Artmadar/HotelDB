@@ -1,0 +1,121 @@
+﻿@model HotelProject.Models.Client
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentForm)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DocumentForm)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentsSeries)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DocumentsSeries)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentsNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DocumentsNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.StatusId)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Room)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.RoomId) - @Html.DisplayFor(model => model.Status.Room.Category.Name) - @Html.DisplayFor(model => model.Status.Room.Category.Inf) 
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model=>model.Status.Employee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.Employee.FirstName) @Html.DisplayFor(model => model.Status.Employee.LastName) - @Html.DisplayFor(model => model.Status.Employee.Position.Name)
+            
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Arrival)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.Arrival) 
+
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Departure)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.Departure) 
+
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.Price) 
+
+        </dd>
+
+
+
+
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ClientId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
